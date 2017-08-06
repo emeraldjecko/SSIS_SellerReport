@@ -1,0 +1,1648 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/3/2017 2:58:33 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LENOVO-PC"
+  DTS:CreatorName="Lenovo-PC\emeraldjecko"
+  DTS:DTSID="{1B39CD22-F3FA-4FA2-B7F1-4DF56300845D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="12.0.4100.1"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SellerReport"
+  DTS:PackageType="5"
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{9D9839B2-0099-4809-BF4F-1C063219C52B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Destination]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4D329623-28F3-4EE3-8EA4-FD68BC88FAD6}"
+      DTS:ObjectName="Destination">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=LENOVO-PC;Initial Catalog=Seller;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourcePurchaseHistory]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{050A5F87-D520-4E7E-ACD7-36F23CB29543}"
+      DTS:ObjectName="SourcePurchaseHistory">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\emeraldjecko\NEW PROJECT\SellerReport\Feeds\20170731\purchasehistory.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SellerName"
+              DTS:DTSID="{42D968FA-38EB-4AF8-B926-D14FE22921C9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ItemNo"
+              DTS:DTSID="{BA200CA6-4B62-4B87-88D5-6AEA3716E021}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CategoryNo"
+              DTS:DTSID="{6CA345C2-B636-414C-AD4C-2BDDBA5EE781}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Title"
+              DTS:DTSID="{51CD20CE-62CE-41AF-A59A-28E9A89296DF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price"
+              DTS:DTSID="{6F585755-65F9-4AC6-B318-A26DD7868B06}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quantity"
+              DTS:DTSID="{1F72CEC4-13BA-43E5-81F3-9EE30045AC28}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Variations"
+              DTS:DTSID="{C8E075F4-D9EA-4F0A-9A56-BC5D6D44C40C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShippingCost"
+              DTS:DTSID="{0FF63CCB-CADA-4EF8-98AA-B243D64C6AAB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Watchers"
+              DTS:DTSID="{A8E8E725-B596-45C8-83AD-C03B5E431401}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DateListed"
+              DTS:DTSID="{A0412BB5-7D9A-4CB8-8594-5261E4F0889D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date"
+              DTS:DTSID="{BBE8A232-BBF9-480D-A08C-CBB224DC89CA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Time"
+              DTS:DTSID="{8DAC29AE-357B-49A0-A55A-17AFB6C6556F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DaysSince"
+              DTS:DTSID="{375ACAF5-B5B7-44F8-93B0-D51831ADD54E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Feedback"
+              DTS:DTSID="{B7D9DC33-8F76-4C24-8ED2-8AEE752E59F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ImageURL"
+              DTS:DTSID="{663AE0C3-4769-4B3B-806C-8B9CEDC15EAF}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourcePurchaseHistoryDupes]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4DFC3B9C-ED48-4C94-8A14-1A37E2FE650B}"
+      DTS:ObjectName="SourcePurchaseHistoryDupes">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=LENOVO-PC;Initial Catalog=Seller;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceStockStatus]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{08D7DA4D-E29D-4E13-BC74-48466B1C5ECC}"
+      DTS:ObjectName="SourceStockStatus">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\emeraldjecko\NEW PROJECT\SellerReport\Feeds\20170731\stockstatus.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SellerID"
+              DTS:DTSID="{3BD1F334-8EC1-4A71-83CD-4764EAFDFDD2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ItemNo"
+              DTS:DTSID="{F4B43ADC-77AB-4FA1-89EC-CA6F6A8A1E20}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Stock"
+              DTS:DTSID="{7B8F60DB-F78A-402F-A7CA-A7C8700D0938}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CurrentDate"
+              DTS:DTSID="{449C1D0A-5BE1-41FB-B1EB-97AC071D670C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Insert Purchase History"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1728D562-294F-48AE-99D8-488D1203AAA1}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert Purchase History"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Insert Purchase History\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert Purchase History\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourcePurchaseHistory]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourcePurchaseHistory]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[SellerName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SellerName]"
+                      length="500"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[SellerName]"
+                      name="SellerName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[ItemNo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ItemNo]"
+                      length="500"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[ItemNo]"
+                      name="ItemNo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[CategoryNo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CategoryNo]"
+                      length="500"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[CategoryNo]"
+                      name="CategoryNo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Title]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Title]"
+                      length="500"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Title]"
+                      name="Title"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Price]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Price]"
+                      length="500"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Price]"
+                      name="Price"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Quantity]"
+                      length="500"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Quantity]"
+                      name="Quantity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Variations]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Variations]"
+                      length="500"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Variations]"
+                      name="Variations"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[ShippingCost]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ShippingCost]"
+                      length="500"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[ShippingCost]"
+                      name="ShippingCost"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Watchers]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Watchers]"
+                      length="500"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Watchers]"
+                      name="Watchers"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[DateListed]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DateListed]"
+                      length="500"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[DateListed]"
+                      name="DateListed"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                      length="500"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Time]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Time]"
+                      length="500"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Time]"
+                      name="Time"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[DaysSince]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DaysSince]"
+                      length="500"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[DaysSince]"
+                      name="DaysSince"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Feedback]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Feedback]"
+                      length="500"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Feedback]"
+                      name="Feedback"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[ImageURL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ImageURL]"
+                      length="500"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[ImageURL]"
+                      name="ImageURL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SellerName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="SellerName" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ItemNo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ItemNo" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CategoryNo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="CategoryNo" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Price" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Variations]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Variations" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ShippingCost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ShippingCost" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Watchers]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Watchers" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DateListed]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="DateListed" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Time]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Time" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DaysSince]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="DaysSince" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Feedback]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Feedback" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ImageURL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ImageURL" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Purchase History\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[purchasehistory]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert Purchase History\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Destination]"
+                  connectionManagerRefId="Package.ConnectionManagers[Destination]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SellerName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="SellerName"
+                      externalMetadataColumnId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SellerName]"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[SellerName]" />
+                    <inputColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ItemNo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="ItemNo"
+                      externalMetadataColumnId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemNo]"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[ItemNo]" />
+                    <inputColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CategoryNo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="CategoryNo"
+                      externalMetadataColumnId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CategoryNo]"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[CategoryNo]" />
+                    <inputColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Title"
+                      externalMetadataColumnId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Title]" />
+                    <inputColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Price]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Price"
+                      externalMetadataColumnId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Price]" />
+                    <inputColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Quantity]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Quantity"
+                      externalMetadataColumnId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Variations]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Variations"
+                      externalMetadataColumnId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Variations]"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Variations]" />
+                    <inputColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ShippingCost]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="ShippingCost"
+                      externalMetadataColumnId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShippingCost]"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[ShippingCost]" />
+                    <inputColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Watchers]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Watchers"
+                      externalMetadataColumnId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Watchers]"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Watchers]" />
+                    <inputColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DateListed]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="DateListed"
+                      externalMetadataColumnId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateListed]"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[DateListed]" />
+                    <inputColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Time]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Time"
+                      externalMetadataColumnId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Time]"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Time]" />
+                    <inputColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DaysSince]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="DaysSince"
+                      externalMetadataColumnId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DaysSince]"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[DaysSince]" />
+                    <inputColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Feedback]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Feedback"
+                      externalMetadataColumnId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Feedback]"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[Feedback]" />
+                    <inputColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ImageURL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="ImageURL"
+                      externalMetadataColumnId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ImageURL]"
+                      lineageId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output].Columns[ImageURL]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SellerName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="SellerName" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemNo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ItemNo" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CategoryNo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="CategoryNo" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Price" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Variations]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Variations" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShippingCost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ShippingCost" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Watchers]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Watchers" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateListed]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="DateListed" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Time]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Time" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DaysSince]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="DaysSince" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Feedback]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Feedback" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ImageURL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ImageURL" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Purchase History\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Purchase History\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Purchase History\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Purchase History\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insert Purchase History.Paths[Flat File Source Output]"
+              endId="Package\Insert Purchase History\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Insert Purchase History\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert Stock Status History"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{51A7BF66-A582-4762-80D4-765D98FCF17D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert Stock Status History"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Insert Stock Status History\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert Stock Status History\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceStockStatus]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceStockStatus]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].Columns[SellerID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SellerID]"
+                      length="500"
+                      lineageId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].Columns[SellerID]"
+                      name="SellerID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].Columns[ItemNo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ItemNo]"
+                      length="500"
+                      lineageId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].Columns[ItemNo]"
+                      name="ItemNo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].Columns[Stock]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Stock]"
+                      length="500"
+                      lineageId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].Columns[Stock]"
+                      name="Stock"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].Columns[CurrentDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CurrentDate]"
+                      length="500"
+                      lineageId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].Columns[CurrentDate]"
+                      name="CurrentDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SellerID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="SellerID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ItemNo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ItemNo" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Stock]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Stock" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CurrentDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="CurrentDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Stock Status History\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stockstatus]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert Stock Status History\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Destination]"
+                  connectionManagerRefId="Package.ConnectionManagers[Destination]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert Stock Status History\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert Stock Status History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SellerID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="SellerID"
+                      externalMetadataColumnId="Package\Insert Stock Status History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SellerID]"
+                      lineageId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].Columns[SellerID]" />
+                    <inputColumn
+                      refId="Package\Insert Stock Status History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ItemNo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="ItemNo"
+                      externalMetadataColumnId="Package\Insert Stock Status History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemNo]"
+                      lineageId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].Columns[ItemNo]" />
+                    <inputColumn
+                      refId="Package\Insert Stock Status History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Stock]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Stock"
+                      externalMetadataColumnId="Package\Insert Stock Status History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Stock]"
+                      lineageId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].Columns[Stock]" />
+                    <inputColumn
+                      refId="Package\Insert Stock Status History\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CurrentDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="CurrentDate"
+                      externalMetadataColumnId="Package\Insert Stock Status History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrentDate]"
+                      lineageId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output].Columns[CurrentDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert Stock Status History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SellerID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="SellerID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stock Status History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemNo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ItemNo" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stock Status History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Stock]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Stock" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stock Status History\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrentDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="CurrentDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Stock Status History\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert Stock Status History\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Stock Status History\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Stock Status History\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Stock Status History\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Stock Status History\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insert Stock Status History.Paths[Flat File Source Output]"
+              endId="Package\Insert Stock Status History\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Insert Stock Status History\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update Stock Status"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C8B3A0DF-F7C6-4A7B-9677-89462FF3155D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update Stock Status"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4D329623-28F3-4EE3-8EA4-FD68BC88FAD6}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="--Synchronize the target table with&#xA;--refreshed data from source table&#xA;MERGE StatusUpdate AS TARGET&#xA;USING stockstatus AS SOURCE &#xA;ON (TARGET.ItemNo = SOURCE.ItemNo) &#xA;--When records are matched, update &#xA;--the records if there is any change&#xA;WHEN MATCHED THEN &#xA;UPDATE SET &#xA;  TARGET.ItemNo = SOURCE.ItemNo, &#xA;  TARGET.OutOfStockDate =    &#xA;&#x9;CASE&#xA;&#x9;  WHEN SOURCE.Stock = 'no' THEN SOURCE.CurrentDate&#xA;&#x9;  ELSE TARGET.OutOfStockDate&#xA;&#x9;END,&#xA;   TARGET.InStockDate =&#x9;    &#xA;&#x9;CASE&#xA;&#x9;  WHEN SOURCE.Stock = 'yes' THEN SOURCE.CurrentDate&#xA;&#x9;  ELSE TARGET.InStockDate&#xA;&#x9;END,&#xA;&#x9;TARGET.EndedDate =&#x9;    &#xA;&#x9;CASE&#xA;&#x9;  WHEN SOURCE.Stock = 'ended' THEN SOURCE.CurrentDate&#xA;&#x9;  ELSE TARGET.EndedDate&#xA;    END,&#xA;  TARGET.DateModified = GETDATE()&#xA;&#xA;WHEN NOT MATCHED BY TARGET THEN &#xA;INSERT (ItemNo, OutOfStockDate, InStockDate, EndedDate, DateModified) &#xA;VALUES (SOURCE.ItemNo, null, SOURCE.CurrentDate, null, GETDATE());&#xA;--OUTPUT $action, &#xA;--TARGET.ItemNo AS ItemNo, &#xA;--TARGET.OutOfStockDate, &#xA;--TARGET.InStockDate,&#xA;--TARGET.EndedDate,&#xA;--TARGET.DateModified; &#xA;SELECT @@ROWCOUNT;&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{84BD9287-D219-41DE-9FDA-6E02A162C567}"
+      DTS:From="Package\Insert Purchase History"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Insert Stock Status History" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{C0C6915C-16E3-4314-8E5F-4081550D14A1}"
+      DTS:From="Package\Insert Stock Status History"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Update Stock Status" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Insert Purchase History"
+          TopLeft="260,69" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Insert Stock Status History"
+          TopLeft="255,151" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="356,111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Update Stock Status"
+          TopLeft="267,227" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="355.75,193">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Insert Purchase History">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Insert Purchase History\Flat File Source"
+          TopLeft="481,15" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Insert Purchase History\OLE DB Destination"
+          TopLeft="474,94" />
+        <EdgeLayout
+          Id="Package\Insert Purchase History.Paths[Flat File Source Output]"
+          TopLeft="558,57">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert Purchase History\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Insert Stock Status History">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Insert Stock Status History\Flat File Source"
+          TopLeft="325,28" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Insert Stock Status History\OLE DB Destination"
+          TopLeft="315,105" />
+        <EdgeLayout
+          Id="Package\Insert Stock Status History.Paths[Flat File Source Output]"
+          TopLeft="400.5,70">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert Stock Status History\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
