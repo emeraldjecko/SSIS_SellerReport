@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SellerReport</Name>
-    <LastWriteTime>2017-08-06T13:29:13.4243181Z</LastWriteTime>
+    <LastWriteTime>2017-08-09T11:53:04.2635874Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>SellerReport.dtsx</Name>
-      <LastWriteTime>2017-08-06T14:18:04.7721148Z</LastWriteTime>
+      <LastWriteTime>2017-08-09T14:42:24.658602Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
